@@ -64,14 +64,14 @@ if not exist %VENV_DIR% (
 
 echo check display info.
 if not exist "%DOWNLOAD_DIR%\display.txt" (dxdiag /t %DOWNLOAD_DIR%\display.txt)
-set DISPLAY_BIZ_NAME=unknown
-set /a DISPLAY_MEM_SIZE=0 M
+set DISPLAY_BIZ_NAME=unknown 
+set /a DISPLAY_MEM_SIZE=0 M>nul 2<&1 
 :check_display
 if EXIST "%DOWNLOAD_DIR%\display.txt" (
   for /f "tokens=1,2,* delims=:" %%a in ('findstr /c:" Card name:" /c:"Dedicated Memory:" "%DOWNLOAD_DIR%\display.txt"') do (
   set /a tee+=1
   if !tee! == 1 set DISPLAY_BIZ_NAME=%%b
-  if !tee! == 2 set /a DISPLAY_MEM_SIZE=%%b
+  if !tee! == 2 set /a DISPLAY_MEM_SIZE=%%b>nul 2<&1 
   )
 ) else (
   powershell -Command "Start-Sleep -m 1000"
@@ -100,7 +100,7 @@ echo *    venv path: %VENV_DIR%
 echo *    webui: %WEBUI%
 echo *    command line args: %COMMANDLINE_ARGS%
 echo **************************************************************
-
+ 
 cd %WEBUI%
 call webui.bat
 pause
