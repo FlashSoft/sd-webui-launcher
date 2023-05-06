@@ -6,4 +6,5 @@ git clone https://github.com/hanamizuki-ai/stable-diffusion-webui-localization-z
 git clone https://github.com/pkuliyi2015/multidiffusion-upscaler-for-automatic1111.git
 git clone https://github.com/butaixianran/Stable-Diffusion-Webui-Civitai-Helper.git
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-rembg.git
-git clone https://github.com/AlUlkesh/stable-diffusion-webui-images-browser
+git clone https://github.com/zanllp/sd-webui-infinite-image-browsing
+git clone https://github.com/canisminor1990/sd-webui-kitchen-theme.git
